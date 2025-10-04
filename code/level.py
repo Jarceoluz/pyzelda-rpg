@@ -48,7 +48,7 @@ class Level:
         self.player = player
         self._player_spawn_pos = player_spawn_pos
         if self._player_spawn_pos is None:
-            self._player_spawn_pos = (4 * TILESIZE, 4 * TILESIZE)  # initial spawn position
+            self._player_spawn_pos = (14 * TILESIZE, 8 * TILESIZE)  # initial spawn position
         self.on_transition = on_transition  # callback for map transitions
 
         # Transition points: { (x, y): {'target_map_id': ..., 'target_spawn': (x, y)} }

@@ -204,7 +204,7 @@ class Game:
         self.screen.blit(instruction_text, instruction_rect)
 
         # Credits
-        credit_text = self.font_subtitle.render("Created by Jarceoluz", True, SUBTITLE_COLOR)
+        credit_text = self.font_subtitle.render("PyZelda RPG - Open Source", True, SUBTITLE_COLOR)
         credit_rect = credit_text.get_rect(center=(WIDTH // 2, HEIGHT - 30))
         self.screen.blit(credit_text, credit_rect)
 

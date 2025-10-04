@@ -1,0 +1,62 @@
+{
+  "collect_fire_artifact": {
+    "id": "collect_fire_artifact",
+    "title": "Collect Fire Artifact",
+    "description": "Find and retrieve the Fire Artifact from the Volcano Temple.",
+    "objectives": [
+      {"type": "collect", "target": "fire_artifact", "count": 1}
+    ],
+    "rewards": {"exp": 100},
+    "prerequisites": [],
+    "parent_quests": [],
+    "child_quests": ["collect_water_artifact"]
+  },
+  "collect_water_artifact": {
+    "id": "collect_water_artifact",
+    "title": "Collect Water Artifact",
+    "description": "Retrieve the Water Artifact from the Aquatic Depths.",
+    "objectives": [
+      {"type": "collect", "target": "water_artifact", "count": 1}
+    ],
+    "rewards": {"exp": 100},
+    "prerequisites": [{"type": "flag", "flag": "fire_artifact_collected"}],
+    "parent_quests": ["collect_fire_artifact"],
+    "child_quests": ["collect_earth_artifact"]
+  },
+  "defeat_goblins": {
+    "id": "defeat_goblins",
+    "title": "Defeat Goblins",
+    "description": "Kill 10 goblins in the forest.",
+    "objectives": [
+      {"type": "kill", "target": "bamboo", "count": 10}
+    ],
+    "rewards": {"exp": 50},
+    "prerequisites": [],
+    "parent_quests": [],
+    "child_quests": []
+  },
+  "fetch_lost_ring": {
+    "id": "fetch_lost_ring",
+    "title": "Fetch Lost Ring",
+    "description": "Retrieve a ring from a bandit camp.",
+    "objectives": [
+      {"type": "collect", "target": "lost_ring", "count": 1}
+    ],
+    "rewards": {"exp": 30},
+    "prerequisites": [],
+    "parent_quests": [],
+    "child_quests": []
+  },
+  "escort_merchant": {
+    "id": "escort_merchant",
+    "title": "Escort Merchant",
+    "description": "Protect the merchant to the town.",
+    "objectives": [
+      {"type": "collect", "target": "merchant", "count": 1}
+    ],
+    "rewards": {"exp": 40},
+    "prerequisites": [],
+    "parent_quests": [],
+    "child_quests": []
+  }
+}

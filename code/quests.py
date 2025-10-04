@@ -32,16 +32,20 @@ class Quest:
 
     def check_prerequisites(self, player_stats, story_flags):
         for prereq in self.prerequisites:
-            if prereq["type"] == "flag" and not story_flags.get(prereq["flag"], False):
-                return False
-            if (
-                prereq["type"] == "stat"
-                and player_stats.get(prereq["stat"], 0) < prereq["value"]
-            ):
+            if prereq["type"] == "flag":
+                if not story_flags.get(prereq["flag"], False):
+                    return False
+            elif prereq["type"] == "stat":
+                if player_stats.get(prereq["stat"], 0) < prereq["value"]:
+                    return False
+            else:
+                # Unknown prerequisite type
                 return False
         return True
 
     def update_objective(self, obj_type, target, amount=1):
+        if self.state == QuestState.NOT_STARTED:
+            self.state = QuestState.ACTIVE
         for obj in self.objectives:
             if obj.type == obj_type and obj.target == target:
                 obj.progress += amount
